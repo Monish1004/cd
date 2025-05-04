@@ -69,13 +69,14 @@
 /* First part of user prologue.  */
 #line 1 "13.y"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 int yylex(void);
 int yyerror(char *s);
 
-#line 79 "y.tab.c"
+
+#line 80 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -551,8 +552,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    15,    15,    16,    17,    20,    21,    22,    25,    26,
-      27
+       0,    17,    17,    18,    19,    23,    24,    25,    29,    30,
+      31
 };
 #endif
 
@@ -1116,61 +1117,61 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* E: E '+' T  */
-#line 15 "13.y"
-                { printf("E -> E + T\n"); }
-#line 1122 "y.tab.c"
+#line 17 "13.y"
+            { printf("E -> E + T\n"); }
+#line 1123 "y.tab.c"
     break;
 
   case 3: /* E: E '-' T  */
-#line 16 "13.y"
-                { printf("E -> E - T\n"); }
-#line 1128 "y.tab.c"
+#line 18 "13.y"
+            { printf("E -> E - T\n"); }
+#line 1129 "y.tab.c"
     break;
 
   case 4: /* E: T  */
-#line 17 "13.y"
-                { printf("E -> T\n"); }
-#line 1134 "y.tab.c"
+#line 19 "13.y"
+            { printf("E -> T\n"); }
+#line 1135 "y.tab.c"
     break;
 
   case 5: /* T: T '*' F  */
-#line 20 "13.y"
-                { printf("T -> T * F\n"); }
-#line 1140 "y.tab.c"
+#line 23 "13.y"
+            { printf("T -> T * F\n"); }
+#line 1141 "y.tab.c"
     break;
 
   case 6: /* T: T '/' F  */
-#line 21 "13.y"
-                { printf("T -> T / F\n"); }
-#line 1146 "y.tab.c"
+#line 24 "13.y"
+            { printf("T -> T / F\n"); }
+#line 1147 "y.tab.c"
     break;
 
   case 7: /* T: F  */
-#line 22 "13.y"
-                { printf("T -> F\n"); }
-#line 1152 "y.tab.c"
+#line 25 "13.y"
+            { printf("T -> F\n"); }
+#line 1153 "y.tab.c"
     break;
 
   case 8: /* F: '(' E ')'  */
-#line 25 "13.y"
-                { printf("F -> (E)\n"); }
-#line 1158 "y.tab.c"
+#line 29 "13.y"
+              { printf("F -> (E)\n"); }
+#line 1159 "y.tab.c"
     break;
 
   case 9: /* F: ID  */
-#line 26 "13.y"
-                { printf("F -> id\n"); }
-#line 1164 "y.tab.c"
+#line 30 "13.y"
+              { printf("F -> id\n"); }
+#line 1165 "y.tab.c"
     break;
 
   case 10: /* F: NUM  */
-#line 27 "13.y"
-                { printf("F -> num\n"); }
-#line 1170 "y.tab.c"
+#line 31 "13.y"
+              { printf("F -> num\n"); }
+#line 1171 "y.tab.c"
     break;
 
 
-#line 1174 "y.tab.c"
+#line 1175 "y.tab.c"
 
       default: break;
     }
@@ -1363,16 +1364,19 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 30 "13.y"
+#line 34 "13.y"
 
 
-int main() {
-    printf("Enter an expression:\n");
-    yyparse();
-    return 0;
+int main(){
+
+	printf("Enter an expression : ");
+	yyparse();
+	return 0;
 }
 
-int yyerror(char *s) {
-    fprintf(stderr, "Error: %s\n", s);  // ✅ fixed typo
-    return 0;
+int yyerror(char *s){
+	fprintf(stderr , "Error : %s\n",s);
+	return 0;
 }
+
+
